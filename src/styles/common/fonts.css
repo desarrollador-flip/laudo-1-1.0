@@ -1,0 +1,63 @@
+@font-face {
+    font-family: 'Hanken Grotesk';
+    src: url('/fonts/hankenVariable.woff2') format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('/fonts/InterVariable.woff2') format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'JetBrains Mono';
+    src: url('/fonts/jetbrainsVariable.woff2') format('woff2');
+    font-weight: 100 800;
+    font-style: italic;
+    font-display: swap;
+}
+
+:root {
+    --font-heading: 'Hanken Grotesk', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --font-special: 'JetBrains Mono', sans-serif;
+}
+
+.font-heading {
+    font-family: var(--font-heading);
+}
+
+.font-body {
+    font-family: var(--font-body);
+}
+
+.font-special {
+    font-family: var(--font-special);
+}
+
+body {
+    font-family: var(--font-body);
+    font-weight: 400;
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-heading);
+    font-weight: 600;
+}

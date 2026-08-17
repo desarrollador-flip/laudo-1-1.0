@@ -1,0 +1,10 @@
+:root {
+    --color-white: #fbf9f8;
+    --color-black: #352f30;
+    --color-red: #af001f;
+    --color-skyred: #fdf1f2;
+
+    --text-black: #1a1a1a;
+
+    --shadow-black: rgba(0, 0, 0, 0.2);
+}
