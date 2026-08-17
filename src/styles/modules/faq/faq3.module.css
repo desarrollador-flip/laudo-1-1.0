@@ -1,0 +1,1 @@
+.section{text-align:center;background:#f9eced;padding:75px 20px 80px;border-top:1px solid var(--color-border)}.section h2{font-size:31px}.section p{color:var(--color-muted);font-size:18px;margin:24px 0 32px}.section button{border:0;background:var(--color-red-bright);color:white;padding:17px 34px;cursor:pointer;font-weight:600}@media(max-width:600px){.section p br{display:none}}

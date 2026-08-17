@@ -1,0 +1,1 @@
+.spinner{animation:spin var(--spinner-speed,1s) linear infinite}.path{stroke-dasharray:90 150;stroke-dashoffset:0}@keyframes spin{to{transform:rotate(360deg)}}

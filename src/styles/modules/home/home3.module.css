@@ -1,0 +1,10 @@
+.section { width: min(1120px, calc(100% - 40px)); margin: auto; padding: 78px 0 88px; }
+.section header { text-align: center; max-width: 780px; margin: auto auto 64px; }
+.section h2 { color: var(--color-red); font-size: 34px; margin-bottom: 14px; }
+.section header p, .cards p { color: var(--color-muted); font-size: 17px; }
+.cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.cards article { border: 1px solid var(--color-border); padding: 32px; min-height: 285px; }
+.cards span { display: grid; place-items: center; width: 56px; height: 56px; background: var(--color-red); margin-bottom: 26px; }
+.cards img { width: 28px; height: 28px; filter: invert(1); }
+.cards h3 { color: var(--color-red); font-size: 25px; margin-bottom: 14px; }
+@media (max-width: 800px) { .cards { grid-template-columns: 1fr; } .cards article { min-height: auto; } }

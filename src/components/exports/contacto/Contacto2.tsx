@@ -1,0 +1,2 @@
+import globe from '../../../assets/images/icons/planeta-tierra.svg';import styles from '../../../styles/modules/contacto/contacto2.module.css';
+export function Contacto2(){return <section className={styles.section}><h2>Presencia en toda la República<br/>Mexicana</h2><p>Brindamos asesoría legal y financiera a nivel nacional, asegurando que cada trabajador<br/>recupere lo que le corresponde sin importar su ubicación.</p><img src={globe} alt=""/></section>}

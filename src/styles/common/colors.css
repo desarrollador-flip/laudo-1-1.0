@@ -1,8 +1,18 @@
 :root {
     --color-white: #fbf9f8;
+    --color-surface: #ffffff;
     --color-black: #352f30;
-    --color-red: #af001f;
+    --color-red: #bd0026;
+    --color-red-bright: #e50032;
     --color-skyred: #fdf1f2;
+    --color-footer: #eee2e3;
+    --color-border: #edb3b8;
+    --color-muted: #6b4c4c;
+    --color-dark: #352f30;
+    --dark-color: var(--color-dark);
+    --darkblue-color: var(--color-dark);
+    --white-color: var(--color-white);
+    --color-gray: var(--color-footer);
 
     --text-black: #1a1a1a;
 

@@ -18,11 +18,27 @@ export const navbarMenu: NavItem[] = [
         type: 'route',
     },
     {
-        id: 'Requisitos',
+        id: 'requisitos',
         to: '/requisitos',
         label: 'Requisitos de Laudo',
         title: 'Revisa los requisitos de Laudo',
         dataLink: 'navbar-requisitos-link',
+        type: 'route',
+    },
+    {
+        id: 'contacto',
+        to: '/contacto',
+        label: 'Contacto',
+        title: 'Contacta con un experto',
+        dataLink: 'navbar-contacto-link',
+        type: 'route',
+    },
+    {
+        id: 'faq',
+        to: '/faq',
+        label: 'Q&A',
+        title: 'Consulta las preguntas frecuentes',
+        dataLink: 'navbar-faq-link',
         type: 'route',
     },
 ];

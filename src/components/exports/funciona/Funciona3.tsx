@@ -1,0 +1,2 @@
+import { BotonNav } from '../../utils/BotonNav';import styles from '../../../styles/modules/funciona/funciona3.module.css';
+export function Funciona3(){return <section className={styles.section}><div><h2>¿Tiene alguna duda sobre los requisitos?</h2><p>Nuestros asesores están disponibles para explicarle cada detalle legal sin ningún compromiso inicial.</p><nav aria-label="Próximos pasos"><BotonNav to="/contacto">Contactar un Asesor</BotonNav><BotonNav to="/faq">Preguntas Frecuentes</BotonNav></nav></div></section>}

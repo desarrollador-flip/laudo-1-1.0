@@ -8,9 +8,12 @@ import logo from '../../assets/images/common/logo.svg';
 export function Footer() {
     return (
         <footer className="footer">
-            <SmartLink to="/" aria-label="Ir a la página de inicio" data-link="footer-logo-btn">
-                <img src={logo} alt="Logotipo de Laudo en el pie de página" loading="lazy" decoding="async" />
-            </SmartLink>
+            <div className="footer-brand">
+                <SmartLink to="/" aria-label="Ir a la página de inicio" dataLink="footer-logo-btn">
+                    <img src={logo} alt="Logotipo de Laudo en el pie de página" loading="lazy" decoding="async" />
+                </SmartLink>
+                <p>© 2026 Laudo. All rights reserved. Professional Legal &amp; Financial<br />Services.</p>
+            </div>
 
             <ul>
                 {footerMenu.map((item) => (
@@ -20,9 +23,6 @@ export function Footer() {
                 ))}
             </ul>
 
-            <p>
-                © 2026 Laudo. All rights reserved. <br /> Professional Legal & Financial Services.
-            </p>
         </footer>
     );
 }
