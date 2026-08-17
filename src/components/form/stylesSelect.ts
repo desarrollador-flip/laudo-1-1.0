@@ -8,16 +8,14 @@ export const stylesSelect: StylesConfig<SelectOption, false> = {
         cursor: 'pointer',
         borderRadius: '5px',
         borderWidth: '1px',
-        borderColor: state.isFocused ? 'var(--color-red)' : 'var(--color-silver)',
-        boxShadow: 'none',
-        fontSize: 'var(--select-font)',
+        borderColor: state.isFocused ? 'var(--color-red)' : 'var(--color-border)',
+        boxShadow: state.isFocused ? '0 0 0 3px rgba(189, 0, 38, .12)' : 'none',
+        fontSize: '16px',
         padding: 0,
-        maxHeight: 'var(--select-height)',
-        minHeight: 'var(--select-height)',
-        width: 'var(--select-width)',
-        backgroundColor: state.isFocused ? 'var(--color-white)' : 'var(--color-gray)',
+        minHeight: '54px',
+        width: '100%',
+        backgroundColor: 'var(--color-surface)',
         color: 'var(--color-black)',
-        marginBottom: '15px',
     }),
 
     valueContainer: (provided) => ({
@@ -32,13 +30,13 @@ export const stylesSelect: StylesConfig<SelectOption, false> = {
         marginLeft: '2px',
         marginRight: 0,
         marginBottom: 'var(--placeholder-marginB)',
-        fontSize: '13px',
+        fontSize: '16px',
     }),
 
     singleValue: (provided) => ({
         ...provided,
         color: 'var(--color-black)',
-        fontSize: 'var(--select-font)',
+        fontSize: '16px',
         padding: 0,
         marginBottom: 'var(--placeholder-marginB)',
     }),
@@ -65,7 +63,7 @@ export const stylesSelect: StylesConfig<SelectOption, false> = {
         color: 'var(--color-black)',
 
         ':hover': {
-            color: 'var(--color-gray)',
+            color: 'var(--color-red)',
         },
     }),
 
@@ -74,7 +72,7 @@ export const stylesSelect: StylesConfig<SelectOption, false> = {
         zIndex: '2',
         top: 0,
         backgroundColor: 'var(--color-white)',
-        border: '1px solid var(--color-silver)',
+        border: '1px solid var(--color-border)',
         boxShadow: 'none',
         borderRadius: 'var(--menu-border)',
         marginBottom: 0,
@@ -92,7 +90,7 @@ export const stylesSelect: StylesConfig<SelectOption, false> = {
     option: (provided, state) => ({
         ...provided,
         padding: 'var(--option-padding)',
-        fontSize: 'var(--select-font)',
+        fontSize: '16px',
         cursor: 'pointer',
         backgroundColor: state.isFocused ? 'rgba(0, 0, 0, 0.06)' : 'var(--color-white)',
         color: 'var(--color-black)',

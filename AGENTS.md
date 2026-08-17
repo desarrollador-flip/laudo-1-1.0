@@ -217,9 +217,50 @@ Do not create a reusable component for something that is only used once unless s
 
 ---
 
+# Repeated UI and data
+
+When a section contains several elements with the same structure, prefer separating the data from the JSX and rendering the elements with `.map()`.
+
+Typical examples include:
+
+- cards;
+- benefits;
+- process steps;
+- requirements;
+- documentation lists;
+- FAQ entries;
+- contact methods;
+- schedules;
+- similar repeated content.
+
+Prefer:
+
+```tsx
+const items = [
+    {
+        title: '...',
+        description: '...',
+    },
+];
+
+return items.map((item) => {
+    // render item
+});
+```
+
+over manually duplicating substantially identical JSX.
+
+Keep data local to the component when it is only used there.
+
+Do not create configuration files, shared types or abstractions solely because `.map()` is being used.
+
+If repeated elements have genuinely different structures or behavior, do not force them into a common data model.
+
+---
+
 # Forms
 
-Complete forms should be independent components.
+Complete forms must be independent components.
 
 Do not embed a substantial form directly inside a page section.
 
@@ -241,15 +282,122 @@ A page section may compose the form:
 <ContactForm />
 ```
 
-but should not contain the complete form implementation when the form is substantial enough to represent its own responsibility.
+but should not contain the complete form implementation when the form represents its own responsibility.
 
-Form-specific styles must also be isolated in their own CSS Module.
+Form-specific styles must be isolated in:
+
+```text
+src/styles/modules/form/
+```
 
 Example:
 
 ```text
-src/styles/modules/form/ContactForm.module.css
+src/styles/modules/form/contactForm.module.css
 ```
+
+## Frontend form architecture
+
+Unless the task explicitly requests a static visual prototype, forms should be implemented with a complete frontend architecture even when backend integration is outside the current scope.
+
+This normally includes:
+
+- controlled fields;
+- form state;
+- field validation;
+- field-level errors;
+- accessible error relationships;
+- clearing a field error when that field is edited;
+- submit validation;
+- loading state prepared when future asynchronous submission is expected;
+- reset behavior prepared for future successful submission.
+
+Do not implement real backend, API, Supabase or external submission logic unless explicitly requested.
+
+When backend integration is outside the task scope, isolate clearly the point inside the submit flow where the future integration should occur.
+
+Do not simulate backend requests with artificial delays.
+
+## Form hooks
+
+When a form contains meaningful state or validation logic, extract that logic into a dedicated hook under:
+
+```text
+src/hooks/
+```
+
+Prefer a form-specific hook:
+
+```text
+useContactForm.ts
+useQuoteForm.ts
+useApplicationForm.ts
+```
+
+Do not create a generic `useForm` abstraction unless multiple forms actually share enough behavior to justify it.
+
+Keep validation and state-management logic outside large JSX components when reasonably possible.
+
+## Existing form infrastructure
+
+Before implementing form controls, inspect the repository for existing:
+
+- form components;
+- hooks;
+- datasets;
+- select components;
+- telephone components;
+- loading indicators;
+- validation helpers;
+- form styles.
+
+Reuse existing infrastructure when it already solves the required responsibility.
+
+Do not create competing implementations of an existing reusable component.
+
+## Reusable datasets
+
+When a fixed dataset already exists in the repository, reuse it instead of duplicating the values.
+
+Examples include:
+
+- states;
+- countries;
+- categories;
+- predefined options.
+
+Transform the data locally to the format required by the component when the transformation is simple and only used there.
+
+Do not create an additional abstraction solely for a trivial data transformation.
+
+## Telephone fields
+
+When `react-phone-input-2` is already part of the project and the design requires a telephone field, prefer the existing phone input implementation and its existing styles unless the task explicitly requires another solution.
+
+Do not install an additional telephone library.
+
+## Select fields
+
+If the repository contains an existing reusable custom select, reuse it where the design requires equivalent behavior.
+
+Do not recreate another custom select for the same responsibility.
+
+Use a native `<select>` when it sufficiently satisfies the design and requirements and there is no reason to use a custom implementation.
+
+## Validation and accessibility
+
+Use:
+
+- semantic labels;
+- appropriate input types;
+- `required` where applicable;
+- `aria-invalid`;
+- `aria-describedby`;
+- accessible error messages.
+
+Field errors should be associated with their corresponding controls.
+
+When submission fails frontend validation, provide an accessible general indication when appropriate.
 
 Form controls must maintain appropriate mobile usability.
 
@@ -258,6 +406,7 @@ For:
 - `input`;
 - `textarea`;
 - `select`;
+- custom inputs that ultimately render a text input;
 
 do not use a font size below:
 
@@ -266,12 +415,6 @@ font-size: 16px;
 ```
 
 unless the project explicitly requires otherwise.
-
-Use semantic labels and accessible form structure.
-
-Do not implement real submission, backend connections, APIs or external services unless explicitly requested.
-
-If a form is specified as visual only, keep it visual only.
 
 ---
 
@@ -312,10 +455,14 @@ src/index.css
 Global selectors such as:
 
 ```css
-html {}
-body {}
-#root {}
-main {}
+html {
+}
+body {
+}
+#root {
+}
+main {
+}
 ```
 
 belong in global styles when they describe application-wide behavior.
@@ -518,6 +665,10 @@ Before implementing a task:
 3. Inspect existing styles and global conventions.
 4. Inspect available dependencies before installing anything.
 5. Understand the current implementation before modifying it.
+
+Before creating a new reusable component, hook, utility or dataset, check whether the repository already contains an implementation for the same responsibility.
+
+Prefer extending or reusing an appropriate existing implementation over creating a competing parallel solution.
 
 When changing existing code:
 
