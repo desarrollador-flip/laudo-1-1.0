@@ -2,13 +2,13 @@ import type { StylesConfig } from 'react-select';
 
 import type { SelectOption } from './CustomSelect';
 
-export const stylesSelect: StylesConfig<SelectOption, false> = {
+export const stylesSelect = (hasError = false): StylesConfig<SelectOption, false> => ({
     control: (provided, state) => ({
         ...provided,
         cursor: 'pointer',
         borderRadius: '5px',
         borderWidth: '1px',
-        borderColor: state.isFocused ? 'var(--color-red)' : 'var(--color-border)',
+        borderColor: hasError ? 'var(--color-red)' : 'var(--color-border)',
         boxShadow: state.isFocused ? '0 0 0 3px rgba(189, 0, 38, .12)' : 'none',
         fontSize: '16px',
         padding: 0,
@@ -99,4 +99,4 @@ export const stylesSelect: StylesConfig<SelectOption, false> = {
             backgroundColor: 'rgba(0, 0, 0, 0.1)',
         },
     }),
-};
+});

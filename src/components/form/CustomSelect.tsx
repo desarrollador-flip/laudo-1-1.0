@@ -30,9 +30,7 @@ export const CustomSelect = ({ label, name, options, value, onChange, error, pla
 
     return (
         <div className={`${styles.field} select-scope`}>
-            <label htmlFor={name}>
-                {label}
-            </label>
+            <label htmlFor={name}>{label}</label>
 
             <Select<SelectOption, false>
                 options={options}
@@ -44,7 +42,7 @@ export const CustomSelect = ({ label, name, options, value, onChange, error, pla
                 isSearchable={false}
                 inputId={name}
                 name={name}
-                styles={stylesSelect}
+                styles={stylesSelect(Boolean(error))}
             />
 
             {error && (

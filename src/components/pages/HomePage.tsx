@@ -1,8 +1,8 @@
 import { TitleSEO } from '../../utils/TitleSEO';
 
 import { Home1 } from '../exports/home/Home1';
-/* import { Home2 } from '../exports/home/Home2';
-import { Home3 } from '../exports/home/Home3';
+import { Home2 } from '../exports/home/Home2';
+/* import { Home3 } from '../exports/home/Home3';
 import { Home4 } from '../exports/home/Home4'; */
 
 function HomePage() {
@@ -14,8 +14,8 @@ function HomePage() {
             />
 
             <Home1 />
-            {/* <Home2 />
-            <Home3 />
+            <Home2 />
+            {/*<Home3 />
             <Home4 /> */}
         </main>
     );
