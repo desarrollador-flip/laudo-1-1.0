@@ -10,7 +10,7 @@ import { estados } from './estadosMexicos';
 const stateOptions: SelectOption[] = estados.map((state) => ({ value: state, label: state }));
 
 export function ContactForm() {
-    const { values, errors, loading, hasSubmitError, updateField, handleInputChange, handleSubmit } = useContactForm();
+    const { values, errors, loading, hasSubmitError, submitError, updateField, handleInputChange, handleSubmit } = useContactForm();
 
     const PhoneInput =
         (
@@ -29,6 +29,12 @@ export function ContactForm() {
             {hasSubmitError && (
                 <p className={styles.formError} role="alert" aria-live="polite">
                     Revisa los campos señalados y completa el formulario correctamente.
+                </p>
+            )}
+
+            {submitError && (
+                <p className={styles.formError} role="alert" aria-live="polite">
+                    {submitError}
                 </p>
             )}
 
