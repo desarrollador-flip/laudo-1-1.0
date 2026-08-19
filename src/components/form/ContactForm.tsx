@@ -10,7 +10,7 @@ import { estados } from './estadosMexicos';
 const stateOptions: SelectOption[] = estados.map((state) => ({ value: state, label: state }));
 
 export function ContactForm() {
-    const { values, errors, loading, hasSubmitError, submitError, updateField, handleInputChange, handleSubmit } = useContactForm();
+    const { values, errors, loading, hasSubmitError, submitError, submitSuccess, updateField, handleInputChange, handleSubmit } = useContactForm();
 
     const PhoneInput =
         (
@@ -136,6 +136,12 @@ export function ContactForm() {
                     </>
                 )}
             </button>
+
+            {submitSuccess && (
+                <p className={styles.formSuccess} role="status" aria-live="polite">
+                    Formulario enviado correctamente
+                </p>
+            )}
         </form>
     );
 }

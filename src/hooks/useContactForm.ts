@@ -47,6 +47,7 @@ export function useContactForm() {
     const [loading, setLoading] = useState(false);
     const [hasSubmitError, setHasSubmitError] = useState(false);
     const [submitError, setSubmitError] = useState<string | null>(null);
+    const [submitSuccess, setSubmitSuccess] = useState(false);
     const [utmParams, setUtmParams] = useState<UtmParams>(DEFAULT_UTM_PARAMS);
     const submissionInProgress = useRef(false);
 
@@ -100,6 +101,7 @@ export function useContactForm() {
     }, []);
 
     const updateField = (name: FormField, value: string): void => {
+        setSubmitSuccess(false);
         setValues((current) => ({ ...current, [name]: value }));
         setErrors((current) => {
             if (!current[name]) return current;
@@ -125,6 +127,7 @@ export function useContactForm() {
 
         if (submissionInProgress.current) return;
 
+        setSubmitSuccess(false);
         setSubmitError(null);
         const validationErrors = validate(values);
 
@@ -177,6 +180,7 @@ export function useContactForm() {
             });
 
             resetForm();
+            setSubmitSuccess(true);
         } catch (error: unknown) {
             console.error('Error al enviar el formulario:', error);
             setSubmitError('No fue posible enviar el formulario. Inténtalo nuevamente.');
@@ -186,5 +190,5 @@ export function useContactForm() {
         }
     };
 
-    return { values, errors, loading, hasSubmitError, submitError, updateField, handleInputChange, handleSubmit, resetForm };
+    return { values, errors, loading, hasSubmitError, submitError, submitSuccess, updateField, handleInputChange, handleSubmit, resetForm };
 }
