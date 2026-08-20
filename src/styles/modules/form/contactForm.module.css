@@ -100,7 +100,7 @@
 }
 @media (max-width: 575px) {
     .form {
-        padding: 26px 20px;
+        padding: 66px 20px;
         padding-top: 80px;
         gap: 22px;
     }
