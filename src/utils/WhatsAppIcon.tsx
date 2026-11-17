@@ -1,5 +1,5 @@
 export function WhatsAppIcon() {
-    const whatsappLink = 'https://wa.me/5218120091197?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20Laudo.';
+    const whatsappLink = 'https://wa.me/5218123800853?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20Laudo.';
 
     const handleClick = (): void => {
         window.open(whatsappLink, '_blank', 'noopener,noreferrer');

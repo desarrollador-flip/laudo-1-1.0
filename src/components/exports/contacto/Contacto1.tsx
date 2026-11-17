@@ -1,17 +1,12 @@
 import chat from '../../../assets/images/icons/burbuja-dialogo-no-back.svg';
-import phone from '../../../assets/images/icons/telefono.svg';
 import { ContactForm } from '../../form/ContactForm';
 import styles from '../../../styles/modules/contacto/contacto1.module.css';
 
-const contacts = [
-    { icon: chat, label: 'WHATSAPP', value: '+52 81 2631 3850', accent: true },
-    { icon: phone, label: 'OFICINA', value: '01 800 LAUDO' },
-];
+const contacts = [{ icon: chat, label: 'LLAMANOS', value: '+52 81 2900 1197', accent: true }];
 
 const schedules = [
     ['Lunes a Viernes', '08:30 - 18:30'],
-    ['Sábados', '08:30 - 14:00'],
-    ['Domingos', 'Cerrado'],
+    ['Sábados y Domingos', 'Cerrado'],
 ];
 
 export function Contacto1() {
@@ -53,7 +48,7 @@ export function Contacto1() {
                         </h2>
 
                         {schedules.map(([day, time], i) => (
-                            <p className={i === 2 ? styles.closed : ''} key={day}>
+                            <p className={i === 1 ? styles.closed : ''} key={day}>
                                 <span>{day}</span>
                                 <b>{time}</b>
                             </p>

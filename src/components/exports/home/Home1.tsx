@@ -8,7 +8,7 @@ export function Home1() {
         <section className={styles.section}>
             <div className={styles.inner}>
                 <div className={styles.copy}>
-                    <h1>Recupera el saldo de tu subcuenta de vivienda hoy</h1>
+                    <h1>Recupera el saldo de tu subcuenta de vivienda</h1>
 
                     <p>
                         Transformamos tus ahorros acumulados en liquidez inmediata a través de un proceso legal transparente y seguro. Sin riesgos,
