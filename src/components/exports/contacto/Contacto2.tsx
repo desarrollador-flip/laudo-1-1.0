@@ -39,6 +39,9 @@ export function Contacto2() {
                         <h3>{location.name}</h3>
                         <span className={styles.building}>{location.building}</span>
                         <span>{location.address}</span>
+                        <span className={styles.locationAction}>
+                            Ver ubicación <span aria-hidden="true">↗</span>
+                        </span>
                     </a>
                 ))}
             </div>
