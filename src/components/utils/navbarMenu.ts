@@ -36,7 +36,7 @@ export const navbarMenu: NavItem[] = [
     {
         id: 'faq',
         to: '/faq',
-        label: 'Q&A',
+        label: 'FAQ',
         title: 'Consulta las preguntas frecuentes',
         dataLink: 'navbar-faq-link',
         type: 'route',
