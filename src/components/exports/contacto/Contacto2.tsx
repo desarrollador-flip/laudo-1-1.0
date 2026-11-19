@@ -18,7 +18,7 @@ export function Contacto2() {
     return (
         <section className={styles.section}>
             <h2>
-                Presencia online en toda la
+                Atención en toda la
                 <br />
                 República Mexicana
             </h2>

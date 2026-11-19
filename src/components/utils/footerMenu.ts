@@ -4,7 +4,7 @@ export const footerMenu: NavItem[] = [
     {
         id: 'privacy',
         to: '/politica-privacidad',
-        label: 'Privacy Policy',
+        label: 'Politica de Privacidad',
         title: 'Conoce la politica de privacidad',
         dataLink: 'footer-privacidad-link',
         type: 'route',

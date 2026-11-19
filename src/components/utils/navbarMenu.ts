@@ -20,7 +20,7 @@ export const navbarMenu: NavItem[] = [
     {
         id: 'requisitos',
         to: '/requisitos',
-        label: 'Requisitos de Laudo',
+        label: 'Requisitos',
         title: 'Revisa los requisitos de Laudo',
         dataLink: 'navbar-requisitos-link',
         type: 'route',

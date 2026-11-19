@@ -12,7 +12,7 @@ export function Footer() {
                 <SmartLink to="/" aria-label="Ir a la página de inicio" dataLink="footer-logo-btn">
                     <img src={logo} alt="Logotipo de Laudo en el pie de página" loading="lazy" decoding="async" />
                 </SmartLink>
-                <p>© 2026 Laudo. All rights reserved. Professional Legal &amp; Financial<br />Services.</p>
+                <p>© 2026 Laudo. Todos los derechos reservados.</p>
             </div>
 
             <ul>
@@ -22,7 +22,6 @@ export function Footer() {
                     </li>
                 ))}
             </ul>
-
         </footer>
     );
 }
