@@ -1,5 +1,5 @@
 .section {
-    width: min(1120px, calc(100% - 40px));
+    width: min(1280px, 90%);
     margin: auto;
     padding: 78px 0 88px;
 }

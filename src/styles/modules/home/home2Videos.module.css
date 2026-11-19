@@ -1,5 +1,14 @@
 .section {
+    position: relative;
     color: var(--color-dark);
+}
+
+.section::after {
+    content: '';
+    position: absolute;
+    inset-inline: 5%;
+    bottom: 0;
+    border-top: 1px solid var(--color-border);
 }
 
 .inner {
@@ -81,8 +90,8 @@
     inset: 0;
     display: grid;
     place-items: center;
-    width: 56px;
-    height: 56px;
+    width: 60px;
+    height: 48px;
     margin: auto;
     border: 0;
     border-radius: 12px;
