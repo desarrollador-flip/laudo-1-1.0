@@ -3,8 +3,8 @@
     padding: 85px 0;
 }
 .inner {
-    width: min(1120px, calc(100% - 40px));
-    margin: auto;
+    width: min(1280px, 90%);
+    margin-inline: auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 70px;
