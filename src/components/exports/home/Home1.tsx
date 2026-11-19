@@ -8,9 +8,15 @@ export function Home1() {
         <section className={styles.section}>
             <div className={styles.inner}>
                 <div className={styles.copy}>
+                    <p className={styles.credential}>
+                        <img src={checkIcon} alt="" />
+                        CERTEZA JURÍDICA REGISTRADA
+                    </p>
                     <h1>Recupera el saldo de tu subcuenta de vivienda</h1>
 
-                    <p>Transformamos tus ahorros acumulados en liquidez inmediata a través de un proceso legal transparente y seguro.</p>
+                    <p className={styles.description}>
+                        Transformamos tus ahorros acumulados en liquidez inmediata a través de un proceso legal transparente y seguro.
+                    </p>
 
                     <div className={styles.badges}>
                         <span>
@@ -27,7 +33,7 @@ export function Home1() {
                     </div>
                 </div>
 
-                <ContactForm />
+                <ContactForm variant="hero" />
             </div>
         </section>
     );

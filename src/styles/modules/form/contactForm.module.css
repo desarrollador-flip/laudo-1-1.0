@@ -109,3 +109,131 @@
         gap: 22px;
     }
 }
+
+.heroForm {
+    --color-border: #e8e4e5;
+    --contact-control-height: 48px;
+    gap: 14px;
+    min-width: 0;
+    padding: clamp(24px, 3.125vw, 44px);
+    padding-top: clamp(30px, 3.6vw, 50px);
+    border: 0;
+    border-radius: 4px;
+    box-shadow: 0 16px 24px -12px rgba(53, 47, 48, 0.32);
+}
+
+.heroHeader {
+    margin-bottom: 8px;
+}
+
+.heroEyebrow {
+    color: var(--color-red);
+    font-family: var(--font-special);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+}
+
+.heroHeader h2 {
+    color: var(--color-dark);
+    font-size: 24px;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    margin-top: 4px;
+}
+
+.heroDescription {
+    color: #5d5d64;
+    font-size: 14px;
+    margin-top: 16px;
+}
+
+.heroForm .twoColumns {
+    grid-template-columns: minmax(0, 2.1fr) minmax(0, 1fr);
+    gap: 16px;
+}
+
+.heroForm .field {
+    gap: 4px;
+}
+
+.heroForm label {
+    color: var(--color-dark);
+    font-size: 12px;
+    letter-spacing: 0.04em;
+}
+
+.heroForm .field > input,
+.heroForm .phoneInput :global(.form-control) {
+    min-height: var(--contact-control-height);
+}
+
+.heroForm input[role='combobox'] {
+    min-height: 0;
+}
+
+.heroForm .phoneInput :global(.form-control),
+.heroForm .phoneInput :global(.flag-dropdown) {
+    height: var(--contact-control-height);
+}
+
+.heroForm .phoneInput :global(.flag-dropdown) {
+    background-color: #efebeb;
+}
+
+.heroForm input::placeholder {
+    color: #727c8a;
+}
+
+.heroForm .phoneInput {
+    margin-bottom: 0;
+}
+
+.heroForm > button {
+    min-height: 48px;
+    margin-top: 4px;
+    border-radius: 2px;
+    box-shadow: 0 3px 5px rgba(53, 47, 48, 0.15);
+    font-size: 14px;
+}
+
+.heroForm .submitIcon {
+    order: 1;
+    font-size: 18px;
+    line-height: 1;
+}
+
+.confidentiality {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 4px;
+    color: #5d5d64;
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 1.35;
+    text-align: center;
+}
+
+.confidentiality img {
+    flex: 0 0 11px;
+}
+
+.heroForm .formError,
+.heroForm .fieldError,
+.heroForm .formSuccess {
+    position: static;
+    transform: none;
+}
+
+@media (max-width: 575px) {
+    .heroForm {
+        padding: 24px 20px;
+    }
+
+    .heroForm .twoColumns {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 14px;
+    }
+}

@@ -12,7 +12,7 @@ export const stylesSelect = (hasError = false): StylesConfig<SelectOption, false
         boxShadow: state.isFocused ? '0 0 0 3px rgba(189, 0, 38, .12)' : 'none',
         fontSize: '16px',
         padding: 0,
-        minHeight: '54px',
+        minHeight: 'var(--contact-control-height, 54px)',
         width: '100%',
         backgroundColor: 'var(--color-surface)',
         color: 'var(--color-black)',
