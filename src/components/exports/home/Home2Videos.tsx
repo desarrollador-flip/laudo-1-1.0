@@ -1,6 +1,3 @@
-import { useRef, useState } from 'react';
-import { flushSync } from 'react-dom';
-
 import playIcon from '../../../assets/images/icons/play.svg';
 import firstMp4 from '../../../assets/videos/video-home-1.mp4';
 import firstWebm from '../../../assets/videos/video-home-1.webm';
@@ -8,6 +5,7 @@ import firstPoster from '../../../assets/videos/video-home-1.webp';
 import secondMp4 from '../../../assets/videos/video-home-2.mp4';
 import secondWebm from '../../../assets/videos/video-home-2.webm';
 import secondPoster from '../../../assets/videos/video-home-2.webp';
+import { useVideoPlayback } from '../../../hooks/useVideoPlayback';
 import styles from '../../../styles/modules/home/home2Videos.module.css';
 
 interface Testimonial {
@@ -42,23 +40,7 @@ const testimonials: Testimonial[] = [
 ];
 
 export function Home2Videos() {
-    const [activeId, setActiveId] = useState<string | null>(null);
-    const videoRef = useRef<HTMLVideoElement>(null);
-
-    function playTestimonial(id: string) {
-        videoRef.current?.pause();
-
-        // Mount the player while the click or keyboard activation is still in progress.
-        flushSync(() => setActiveId(id));
-        const video = videoRef.current;
-
-        if (!video) return;
-
-        video.focus({ preventScroll: true });
-        void video.play().catch(() => {
-            // Native controls remain available if the browser declines playback.
-        });
-    }
+    const { activeId, videoRef, playVideo } = useVideoPlayback();
 
     return (
         <section className={styles.section} aria-labelledby="home-testimonials-title">
@@ -90,7 +72,7 @@ export function Home2Videos() {
                                             type="button"
                                             className={styles.play}
                                             aria-label={`Reproducir testimonio: ${title}`}
-                                            onClick={() => playTestimonial(id)}
+                                            onClick={() => playVideo(id)}
                                         >
                                             <img src={playIcon} alt="" width="22" height="22" />
                                         </button>

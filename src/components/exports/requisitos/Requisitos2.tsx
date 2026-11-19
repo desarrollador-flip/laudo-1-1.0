@@ -1,5 +1,8 @@
-import image from '../../../assets/images/requisitos/requisitos-2-1.webp';
 import check from '../../../assets/images/icons/check-no-back.svg';
+import requisitosMp4 from '../../../assets/videos/laudo-requisitos.mp4';
+import requisitosWebm from '../../../assets/videos/laudo-requisitos.webm';
+import requisitosPoster from '../../../assets/videos/laudo-requisitos.webp';
+import { VideoPlayer } from '../../common/VideoPlayer';
 import { BotonNav } from '../../utils/BotonNav';
 import styles from '../../../styles/modules/requisitos/requisitos2.module.css';
 const requirements = [
@@ -35,7 +38,13 @@ export function Requisitos2() {
                     </BotonNav>
                 </div>
 
-                <img src={image} alt="Representación de una persona solicitante" />
+                <VideoPlayer
+                    className={styles.video}
+                    title="Requisitos para recuperar tu subcuenta de vivienda"
+                    poster={requisitosPoster}
+                    webm={requisitosWebm}
+                    mp4={requisitosMp4}
+                />
             </div>
         </section>
     );

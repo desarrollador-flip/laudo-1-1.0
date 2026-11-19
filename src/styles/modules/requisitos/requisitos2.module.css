@@ -45,7 +45,7 @@
     color: white;
     font-size: 23px;
 }
-.inner button {
+.inner > div:first-child > button {
     border: 0;
     background: var(--color-red);
     color: white;
@@ -53,9 +53,9 @@
     font-size: 17px;
     cursor: pointer;
 }
-.inner > img {
+.video {
+    --video-aspect-ratio: 1;
     width: 100%;
-    border-radius: 5px;
     box-shadow: 0 20px 30px rgba(0, 0, 0, 0.25);
 }
 @media (max-width: 750px) {
@@ -63,7 +63,7 @@
         grid-template-columns: 1fr;
         gap: 50px;
     }
-    .inner > img {
+    .video {
         max-width: 480px;
         margin: auto;
     }

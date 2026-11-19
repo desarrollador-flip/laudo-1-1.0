@@ -1,0 +1,51 @@
+.frame {
+    position: relative;
+    min-width: 0;
+    aspect-ratio: var(--video-aspect-ratio, 16 / 9);
+    overflow: hidden;
+    border-radius: 5px;
+    background: var(--color-dark);
+}
+
+.media {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.media:focus-visible {
+    outline: 2px solid white;
+    outline-offset: -3px;
+}
+
+.play {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    width: 60px;
+    height: 48px;
+    margin: auto;
+    padding: 0;
+    border: 0;
+    border-radius: 12px;
+    background: var(--color-red);
+    cursor: pointer;
+}
+
+.play img {
+    filter: brightness(0) invert(1);
+}
+
+.play:hover {
+    background: #97001e;
+}
+
+.play:focus-visible {
+    outline: 3px solid white;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 7px var(--color-dark);
+}
