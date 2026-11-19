@@ -1,4 +1,4 @@
-import heroImage from '../../../assets/images/home/home-1-1.webp';
+import { ContactForm } from '../../form/ContactForm';
 import checkIcon from '../../../assets/images/icons/check-no-back.svg';
 import shieldIcon from '../../../assets/images/icons/escudo.svg';
 import styles from '../../../styles/modules/home/home1.module.css';
@@ -10,10 +10,7 @@ export function Home1() {
                 <div className={styles.copy}>
                     <h1>Recupera el saldo de tu subcuenta de vivienda</h1>
 
-                    <p>
-                        Transformamos tus ahorros acumulados en liquidez inmediata a través de un proceso legal transparente y seguro. Sin riesgos,
-                        sin complicaciones.
-                    </p>
+                    <p>Transformamos tus ahorros acumulados en liquidez inmediata a través de un proceso legal transparente y seguro.</p>
 
                     <div className={styles.badges}>
                         <span>
@@ -25,12 +22,12 @@ export function Home1() {
                         <span>
                             <img src={shieldIcon} alt="" />
 
-                            <span>RECUPERACIÓN SIN COMPLICACIONES</span>
+                            <span>RECUPERACIÓN GARANTIZADA</span>
                         </span>
                     </div>
                 </div>
 
-                <img className={styles.hero} src={heroImage} alt="Casa y gráfica que representa el crecimiento del patrimonio" />
+                <ContactForm />
             </div>
         </section>
     );
