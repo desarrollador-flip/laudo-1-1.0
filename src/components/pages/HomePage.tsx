@@ -2,6 +2,7 @@ import { TitleSEO } from '../../utils/TitleSEO';
 
 import { Home1 } from '../exports/home/Home1';
 import { Home2 } from '../exports/home/Home2';
+import { Home2Videos } from '../exports/home/Home2Videos';
 import { Home3 } from '../exports/home/Home3';
 import { Home4 } from '../exports/home/Home4';
 
@@ -16,6 +17,7 @@ function HomePage() {
 
             <Home1 />
             <Home2 />
+            <Home2Videos />
             <Home3 />
             <Home4 />
         </main>
